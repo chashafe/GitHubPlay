@@ -48,3 +48,10 @@ jobs:
           ls ${{runner.tool_cache}}
       
       - run: echo "The job's status ${{job.status}}"
+  Second-Job:
+    name: The Second Job
+    runs-on: ubuntu-latest
+    needs: First-Job
+    steps:
+      - run: echo "The second job is running ${{runner.os}}"
+      - run: echo "The first job's status ${{needs.First-Job.status}}"  
