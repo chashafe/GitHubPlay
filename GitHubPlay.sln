@@ -3,10 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigActionTool", "GigActionTool\GigActionTool.csproj", "{CC871A5B-2A23-465B-AE31-342D5CCC4552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigActionTool.Tests", "GigActionTool.Tests\GigActionTool.Tests.csproj", "{F7A4EDE2-9F09-4661-9423-1CDCEDB686FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC871A5B-2A23-465B-AE31-342D5CCC4552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC871A5B-2A23-465B-AE31-342D5CCC4552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC871A5B-2A23-465B-AE31-342D5CCC4552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC871A5B-2A23-465B-AE31-342D5CCC4552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A4EDE2-9F09-4661-9423-1CDCEDB686FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A4EDE2-9F09-4661-9423-1CDCEDB686FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A4EDE2-9F09-4661-9423-1CDCEDB686FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A4EDE2-9F09-4661-9423-1CDCEDB686FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
