@@ -1,0 +1,50 @@
+name: WorkFlowOnPush
+on: push
+jobs:
+  First-Job:
+    name: Just Run
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job triggered by ${{github.event_name}} event."
+      - run: echo "Job is running on a ${{runner.os}} hosted server"
+      - run: echo "The name of the branch is ${{github.ref}} from the repo ${{github.repository}}"
+      
+      - name: Check out code
+        uses: actions/checkout@v3
+        
+      - run: echo "The ${{github.repository}} cloned to the runner"
+      - run: echo "The repo has been copied to the path ${{github.workspace}} on the runner"
+      - run: echo "The workflow is ready to test the code on the runner"
+      
+      - name: Conditional Step For Pull Request
+        if: ${{github.event_name == 'pull_request'}}
+        run: echo "On pull request"
+      
+      - name: List Files in the Repo
+        run: 
+          ls ${{github.workspace}}
+      
+      - name: Setup dotnet runner
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.x'
+      
+      - name: Display dotnet version
+        run: dotnet --version
+        
+      - name: Restore dependencies
+        run: dotnet restore
+      
+      - name: Build
+        run: dotnet build --no-restore
+      
+      - name: Run Tests
+        run: dotnet test --no-build --verbosity normal
+      
+      - run: echo "Preinstalled tools on the runner located here ${{runner.tool_cache}}"
+      
+      - name: List file in the cache
+        run: 
+          ls ${{runner.tool_cache}}
+      
+      - run: echo "The job's status ${{job.status}}"
