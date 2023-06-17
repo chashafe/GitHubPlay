@@ -1,5 +1,9 @@
 name: WorkFlowOnPush
-on: push
+on: 
+  push:
+    branches: [ master, feature/thing ]
+  pull_request:
+    branches: [ master, feature/thing ]
 jobs:
   First-Job:
     name: Just Run
