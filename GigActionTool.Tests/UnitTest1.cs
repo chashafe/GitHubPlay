@@ -8,9 +8,12 @@ namespace GigActionTool.Tests
         }
 
         [Test]
-        public void Test1()
+        public void WeatherForecast_ReturnsCalculatedTemperature()
         {
-            Assert.Pass();
+            var temperature = 1;
+            var forecast = new WeatherForecast(new DateOnly(2021, 1, 1), temperature, "Whatever");
+            var expected = 31 + (int)(temperature / 0.5556);
+            Assert.That(expected == forecast.TemperatureF);
         }
     }
 }
